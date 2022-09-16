@@ -2,4 +2,5 @@
     <string name="app_name">Dice Roller</string>
     <string name="button_text">Roll Dice</string>
     <string name="roll_value">6</string>
+    <string name="dice_img_alt">Resultant Dice Image</string>
 </resources>
