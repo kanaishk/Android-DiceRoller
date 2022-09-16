@@ -12,19 +12,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Roller Button Implementation
+        val luckyNum: Int = (1..6).random()
         val rollButton: Button = findViewById(R.id.rollButton)
 
         rollButton.setOnClickListener {
-            rollDice()
+            rollDice(luckyNum)
         }
     }
 
-    private fun rollDice() {
+    private fun rollDice(luckyNum: Int) {
         val myDice = Dice(6)
-        val toastMsg = Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT)
-        toastMsg.show()
         val rollResultText: TextView = findViewById(R.id.rollResultText)
-        rollResultText.text = myDice.roll().toString()
+        val rollResult:Int = myDice.roll()
+        rollResultText.text = rollResult.toString()
+
+        val toastMsg: String = if(rollResult == luckyNum) {
+            "You win!"
+        } else {
+            "You didn't win, try again!"
+        }
+        val toastEle = Toast.makeText(this, toastMsg, Toast.LENGTH_SHORT)
+        toastEle.show()
     }
 }
 
