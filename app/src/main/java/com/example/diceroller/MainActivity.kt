@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice(luckyNum)
         }
+        rollDice(luckyNum)
     }
 
     private fun rollDice(luckyNum: Int) {
@@ -29,14 +30,16 @@ class MainActivity : AppCompatActivity() {
         rollResultText.text = rollResult.toString()
 
         val diceImage: ImageView = findViewById(R.id.diceImage)
-        when(rollResult) {
-            1 -> diceImage.setImageResource(R.drawable.dice_1)
-            2 -> diceImage.setImageResource(R.drawable.dice_2)
-            3 -> diceImage.setImageResource(R.drawable.dice_3)
-            4 -> diceImage.setImageResource(R.drawable.dice_4)
-            5 -> diceImage.setImageResource(R.drawable.dice_5)
-            6 -> diceImage.setImageResource(R.drawable.dice_6)
+        val rollDiceDrawableResource = when(rollResult) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
         }
+        diceImage.setImageResource(rollDiceDrawableResource)
+        diceImage.contentDescription = rollResult.toString()
 
         val toastMsg: String = if(rollResult == luckyNum) {
             "You win!"
