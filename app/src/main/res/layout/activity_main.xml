@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteY="7dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/rollResultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
@@ -25,14 +25,14 @@
         tools:text="@string/roll_value" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/rollButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/rollResultText"
         app:layout_constraintVertical_bias="0.100000024" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
